@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThyBiletModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+    <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBL_Birim">
+    <Key>
+      <PropertyRef Name="BirimID" />
+    </Key>
+    <Property Name="BirimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BirimAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Class">
+    <Key>
+      <PropertyRef Name="ClassId" />
+    </Key>
+    <Property Name="ClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KoltukClass" Type="nvarchar" MaxLength="50" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Departman">
+    <Key>
+      <PropertyRef Name="DepartmanID" />
+    </Key>
+    <Property Name="DepartmanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmanAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="char" MaxLength="11" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Durum">
+    <Key>
+      <PropertyRef Name="DurumID" />
+    </Key>
+    <Property Name="DurumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DurumAD" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TBL_Gorev">
+    <Key>
+      <PropertyRef Name="GorevID" />
+    </Key>
+    <Property Name="GorevID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GorevAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="Departman" Type="int" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Kasa">
+    <Key>
+      <PropertyRef Name="KasaID" />
+    </Key>
+    <Property Name="KasaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KasaAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bakiye" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Giren" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Cikan" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Koltuk">
+    <Key>
+      <PropertyRef Name="KoltukID" />
+    </Key>
+    <Property Name="KoltukID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KoltukNO" Type="char" MaxLength="4" />
+    <Property Name="Class" Type="int" />
+    <Property Name="Durum" Type="int" />
+    <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="TBL_Musteri">
+    <Key>
+      <PropertyRef Name="MusteriID" />
+    </Key>
+    <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="60" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="60" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+    <Property Name="Ulke" Type="int" />
+    <Property Name="Sehir" Type="int" />
+    <Property Name="ilce" Type="int" />
+    <Property Name="Durum" Type="int" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="250" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
+    <Property Name="Ucus" Type="int" />
+    <Property Name="Koltuk" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_MusteriLogları">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" />
+    <Property Name="Rapor" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TBL_Personel">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="60" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="250" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="60" />
+    <Property Name="IseGirisTarih" Type="date" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="4" />
+    <Property Name="Yetki" Type="char" MaxLength="1" />
+    <Property Name="Durum" Type="int" />
+    <Property Name="Gorev" Type="int" />
+    <Property Name="Departman" Type="int" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TBL_PersonelLogları">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" />
+    <Property Name="Rapor" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TBL_Telefon">
+    <Key>
+      <PropertyRef Name="TelefonID" />
+    </Key>
+    <Property Name="TelefonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Ucus">
+    <Key>
+      <PropertyRef Name="UcusID" />
+    </Key>
+    <Property Name="UcusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UcusNo" Type="char" MaxLength="5" />
+    <Property Name="Kapasite" Type="int" />
+    <Property Name="Durum" Type="int" />
+    <Property Name="Nereden" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nereye" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tarih" Type="date" />
+    <Property Name="Saat" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="TBL_UcusUrun">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="UrunGrupAd" Type="int" />
+    <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Kdv" Type="tinyint" />
+    <Property Name="Adet" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Durum" Type="int" />
+    <Property Name="Birim" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_UcusUrunGrup">
+    <Key>
+      <PropertyRef Name="UrunGrupId" />
+    </Key>
+    <Property Name="UrunGrupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunGrupAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Ulke">
+    <Key>
+      <PropertyRef Name="UlkeID" />
+    </Key>
+    <Property Name="UlkeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UlkeAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Durum" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_UrunGirdiCikti">
+    <Key>
+      <PropertyRef Name="HareketID" />
+    </Key>
+    <Property Name="HareketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UcusUrun" Type="int" />
+    <Property Name="Adet" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Tarih" Type="date" />
+    <Property Name="GirdiCikti" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_ilceler_iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="1" />
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Bilet_TBL_Birim">
+    <End Role="TBL_Birim" Type="Self.TBL_Birim" Multiplicity="0..1" />
+    <End Role="TBL_UcusUrun" Type="Self.TBL_UcusUrun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Birim">
+        <PropertyRef Name="BirimID" />
+      </Principal>
+      <Dependent Role="TBL_UcusUrun">
+        <PropertyRef Name="Birim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Bilet_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_UcusUrun" Type="Self.TBL_UcusUrun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_UcusUrun">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_BiletlerGrupAd_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_UcusUrunGrup" Type="Self.TBL_UcusUrunGrup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_UcusUrunGrup">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Birim_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Birim" Type="Self.TBL_Birim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Birim">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Class_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Class" Type="Self.TBL_Class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Class">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Departman_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Departman" Type="Self.TBL_Departman" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Departman">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Gorev_TBL_Departman">
+    <End Role="TBL_Departman" Type="Self.TBL_Departman" Multiplicity="0..1" />
+    <End Role="TBL_Gorev" Type="Self.TBL_Gorev" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Departman">
+        <PropertyRef Name="DepartmanID" />
+      </Principal>
+      <Dependent Role="TBL_Gorev">
+        <PropertyRef Name="Departman" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Gorev_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Gorev" Type="Self.TBL_Gorev" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Gorev">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Kasa_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Kasa" Type="Self.TBL_Kasa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Kasa">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Koltuk_TBL_Class">
+    <End Role="TBL_Class" Type="Self.TBL_Class" Multiplicity="0..1" />
+    <End Role="TBL_Koltuk" Type="Self.TBL_Koltuk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Class">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="TBL_Koltuk">
+        <PropertyRef Name="Class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Koltuk_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Koltuk" Type="Self.TBL_Koltuk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Koltuk">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Musteri_ilceler">
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="0..1" />
+    <End Role="TBL_Musteri" Type="Self.TBL_Musteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilceler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TBL_Musteri">
+        <PropertyRef Name="ilce" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Musteri_iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="0..1" />
+    <End Role="TBL_Musteri" Type="Self.TBL_Musteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TBL_Musteri">
+        <PropertyRef Name="Sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Musteri_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Musteri" Type="Self.TBL_Musteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Musteri">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Musteri_TBL_Koltuk">
+    <End Role="TBL_Koltuk" Type="Self.TBL_Koltuk" Multiplicity="0..1" />
+    <End Role="TBL_Musteri" Type="Self.TBL_Musteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Koltuk">
+        <PropertyRef Name="KoltukID" />
+      </Principal>
+      <Dependent Role="TBL_Musteri">
+        <PropertyRef Name="Koltuk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Musteri_TBL_Ucus">
+    <End Role="TBL_Ucus" Type="Self.TBL_Ucus" Multiplicity="0..1" />
+    <End Role="TBL_Musteri" Type="Self.TBL_Musteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Ucus">
+        <PropertyRef Name="UcusID" />
+      </Principal>
+      <Dependent Role="TBL_Musteri">
+        <PropertyRef Name="Ucus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Personel_TBL_Departman">
+    <End Role="TBL_Departman" Type="Self.TBL_Departman" Multiplicity="0..1" />
+    <End Role="TBL_Personel" Type="Self.TBL_Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Departman">
+        <PropertyRef Name="DepartmanID" />
+      </Principal>
+      <Dependent Role="TBL_Personel">
+        <PropertyRef Name="Departman" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Personel_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Personel" Type="Self.TBL_Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Personel">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Personel_TBL_Gorev">
+    <End Role="TBL_Gorev" Type="Self.TBL_Gorev" Multiplicity="0..1" />
+    <End Role="TBL_Personel" Type="Self.TBL_Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Gorev">
+        <PropertyRef Name="GorevID" />
+      </Principal>
+      <Dependent Role="TBL_Personel">
+        <PropertyRef Name="Gorev" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Telefon_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Telefon" Type="Self.TBL_Telefon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Telefon">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Ucus_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Ucus" Type="Self.TBL_Ucus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Ucus">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_UcusUrun_TBL_UcusUrunGrup">
+    <End Role="TBL_UcusUrunGrup" Type="Self.TBL_UcusUrunGrup" Multiplicity="0..1" />
+    <End Role="TBL_UcusUrun" Type="Self.TBL_UcusUrun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_UcusUrunGrup">
+        <PropertyRef Name="UrunGrupId" />
+      </Principal>
+      <Dependent Role="TBL_UcusUrun">
+        <PropertyRef Name="UrunGrupAd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Ulke_TBL_Durum">
+    <End Role="TBL_Durum" Type="Self.TBL_Durum" Multiplicity="0..1" />
+    <End Role="TBL_Ulke" Type="Self.TBL_Ulke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Durum">
+        <PropertyRef Name="DurumID" />
+      </Principal>
+      <Dependent Role="TBL_Ulke">
+        <PropertyRef Name="Durum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_UrunGirdiCikti_TBL_UcusUrun">
+    <End Role="TBL_UcusUrun" Type="Self.TBL_UcusUrun" Multiplicity="0..1" />
+    <End Role="TBL_UrunGirdiCikti" Type="Self.TBL_UrunGirdiCikti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_UcusUrun">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="TBL_UrunGirdiCikti">
+        <PropertyRef Name="UcusUrun" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ThyBiletModelStoreContainer">
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Birim" EntityType="Self.TBL_Birim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Class" EntityType="Self.TBL_Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Departman" EntityType="Self.TBL_Departman" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Durum" EntityType="Self.TBL_Durum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Gorev" EntityType="Self.TBL_Gorev" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Kasa" EntityType="Self.TBL_Kasa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Koltuk" EntityType="Self.TBL_Koltuk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Musteri" EntityType="Self.TBL_Musteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MusteriLogları" EntityType="Self.TBL_MusteriLogları" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Personel" EntityType="Self.TBL_Personel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_PersonelLogları" EntityType="Self.TBL_PersonelLogları" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Telefon" EntityType="Self.TBL_Telefon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Ucus" EntityType="Self.TBL_Ucus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_UcusUrun" EntityType="Self.TBL_UcusUrun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_UcusUrunGrup" EntityType="Self.TBL_UcusUrunGrup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Ulke" EntityType="Self.TBL_Ulke" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_UrunGirdiCikti" EntityType="Self.TBL_UrunGirdiCikti" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="ilceler" EntitySet="ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Bilet_TBL_Birim" Association="Self.FK_TBL_Bilet_TBL_Birim">
+      <End Role="TBL_Birim" EntitySet="TBL_Birim" />
+      <End Role="TBL_UcusUrun" EntitySet="TBL_UcusUrun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Bilet_TBL_Durum" Association="Self.FK_TBL_Bilet_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_UcusUrun" EntitySet="TBL_UcusUrun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_BiletlerGrupAd_TBL_Durum" Association="Self.FK_TBL_BiletlerGrupAd_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_UcusUrunGrup" EntitySet="TBL_UcusUrunGrup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Birim_TBL_Durum" Association="Self.FK_TBL_Birim_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Birim" EntitySet="TBL_Birim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Class_TBL_Durum" Association="Self.FK_TBL_Class_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Class" EntitySet="TBL_Class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Departman_TBL_Durum" Association="Self.FK_TBL_Departman_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Departman" EntitySet="TBL_Departman" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Gorev_TBL_Departman" Association="Self.FK_TBL_Gorev_TBL_Departman">
+      <End Role="TBL_Departman" EntitySet="TBL_Departman" />
+      <End Role="TBL_Gorev" EntitySet="TBL_Gorev" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Gorev_TBL_Durum" Association="Self.FK_TBL_Gorev_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Gorev" EntitySet="TBL_Gorev" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Kasa_TBL_Durum" Association="Self.FK_TBL_Kasa_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Kasa" EntitySet="TBL_Kasa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Koltuk_TBL_Class" Association="Self.FK_TBL_Koltuk_TBL_Class">
+      <End Role="TBL_Class" EntitySet="TBL_Class" />
+      <End Role="TBL_Koltuk" EntitySet="TBL_Koltuk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Koltuk_TBL_Durum" Association="Self.FK_TBL_Koltuk_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Koltuk" EntitySet="TBL_Koltuk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Musteri_ilceler" Association="Self.FK_TBL_Musteri_ilceler">
+      <End Role="ilceler" EntitySet="ilceler" />
+      <End Role="TBL_Musteri" EntitySet="TBL_Musteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Musteri_iller" Association="Self.FK_TBL_Musteri_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="TBL_Musteri" EntitySet="TBL_Musteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Musteri_TBL_Durum" Association="Self.FK_TBL_Musteri_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Musteri" EntitySet="TBL_Musteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Musteri_TBL_Koltuk" Association="Self.FK_TBL_Musteri_TBL_Koltuk">
+      <End Role="TBL_Koltuk" EntitySet="TBL_Koltuk" />
+      <End Role="TBL_Musteri" EntitySet="TBL_Musteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Musteri_TBL_Ucus" Association="Self.FK_TBL_Musteri_TBL_Ucus">
+      <End Role="TBL_Ucus" EntitySet="TBL_Ucus" />
+      <End Role="TBL_Musteri" EntitySet="TBL_Musteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Personel_TBL_Departman" Association="Self.FK_TBL_Personel_TBL_Departman">
+      <End Role="TBL_Departman" EntitySet="TBL_Departman" />
+      <End Role="TBL_Personel" EntitySet="TBL_Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Personel_TBL_Durum" Association="Self.FK_TBL_Personel_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Personel" EntitySet="TBL_Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Personel_TBL_Gorev" Association="Self.FK_TBL_Personel_TBL_Gorev">
+      <End Role="TBL_Gorev" EntitySet="TBL_Gorev" />
+      <End Role="TBL_Personel" EntitySet="TBL_Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Telefon_TBL_Durum" Association="Self.FK_TBL_Telefon_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Telefon" EntitySet="TBL_Telefon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Ucus_TBL_Durum" Association="Self.FK_TBL_Ucus_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Ucus" EntitySet="TBL_Ucus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_UcusUrun_TBL_UcusUrunGrup" Association="Self.FK_TBL_UcusUrun_TBL_UcusUrunGrup">
+      <End Role="TBL_UcusUrunGrup" EntitySet="TBL_UcusUrunGrup" />
+      <End Role="TBL_UcusUrun" EntitySet="TBL_UcusUrun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Ulke_TBL_Durum" Association="Self.FK_TBL_Ulke_TBL_Durum">
+      <End Role="TBL_Durum" EntitySet="TBL_Durum" />
+      <End Role="TBL_Ulke" EntitySet="TBL_Ulke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_UrunGirdiCikti_TBL_UcusUrun" Association="Self.FK_TBL_UrunGirdiCikti_TBL_UcusUrun">
+      <End Role="TBL_UcusUrun" EntitySet="TBL_UcusUrun" />
+      <End Role="TBL_UrunGirdiCikti" EntitySet="TBL_UrunGirdiCikti" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

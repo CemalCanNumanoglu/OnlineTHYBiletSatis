@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f9cfd3a6cee8426e8d8e674a6fefd1b9" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ThyBiletModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Birim" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Departman" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Durum" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Gorev" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Kasa" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Musteri" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Personel" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Ulke" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Birim_TBL_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Departman_TBL_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Gorev_TBL_Departman" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Personel_TBL_Departman" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Gorev_TBL_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Kasa_TBL_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Musteri_TBL_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Personel_TBL_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Personel_TBL_Gorev" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Telefon" Width="1.5" PointX="3" PointY="24" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Telefon_TBL_Durum" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Ulke_TBL_Durum" />
+        <EntityTypeShape EntityType="ThyBiletModel.ilceler" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ThyBiletModel.iller" Width="1.5" PointX="8.375" PointY="3.75" />
+        <AssociationConnector Association="ThyBiletModel.FK_ilceler_iller" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Musteri_ilceler" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Musteri_iller" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Class" Width="1.5" PointX="3" PointY="19.125" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Class_TBL_Durum" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_UcusUrun" Width="1.5" PointX="10.25" PointY="13.875" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_UcusUrunGrup" Width="1.5" PointX="2.625" PointY="0.5" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Bilet_TBL_Birim1" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Bilet_TBL_Durum1" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_BiletlerGrupAd_TBL_Durum" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_UcusUrun_TBL_UcusUrunGrup" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_UrunGirdiCikti" Width="1.5" PointX="12.5" PointY="14.5" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_UrunGirdiCikti_TBL_UcusUrun" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_PersonelLogları" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_MusteriLogları" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Koltuk" Width="1.5" PointX="5.25" PointY="16.875" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Koltuk_TBL_Class" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Koltuk_TBL_Durum" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Musteri_TBL_Koltuk" />
+        <EntityTypeShape EntityType="ThyBiletModel.TBL_Ucus" Width="1.5" PointX="3" PointY="26.75" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Ucus_TBL_Durum" />
+        <AssociationConnector Association="ThyBiletModel.FK_TBL_Musteri_TBL_Ucus" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

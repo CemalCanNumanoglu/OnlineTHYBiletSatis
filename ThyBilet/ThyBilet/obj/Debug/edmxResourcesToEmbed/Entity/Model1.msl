@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ThyBiletModelStoreContainer" CdmEntityContainer="ThyBiletEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ThyBiletModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Birim">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Birim">
+        <MappingFragment StoreEntitySet="TBL_Birim">
+          <ScalarProperty Name="BirimID" ColumnName="BirimID" />
+          <ScalarProperty Name="BirimAD" ColumnName="BirimAD" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Departman">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Departman">
+        <MappingFragment StoreEntitySet="TBL_Departman">
+          <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
+          <ScalarProperty Name="DepartmanAD" ColumnName="DepartmanAD" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Durum">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Durum">
+        <MappingFragment StoreEntitySet="TBL_Durum">
+          <ScalarProperty Name="DurumID" ColumnName="DurumID" />
+          <ScalarProperty Name="DurumAD" ColumnName="DurumAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Gorev">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Gorev">
+        <MappingFragment StoreEntitySet="TBL_Gorev">
+          <ScalarProperty Name="GorevID" ColumnName="GorevID" />
+          <ScalarProperty Name="GorevAD" ColumnName="GorevAD" />
+          <ScalarProperty Name="Departman" ColumnName="Departman" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Kasa">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Kasa">
+        <MappingFragment StoreEntitySet="TBL_Kasa">
+          <ScalarProperty Name="KasaID" ColumnName="KasaID" />
+          <ScalarProperty Name="KasaAdi" ColumnName="KasaAdi" />
+          <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+          <ScalarProperty Name="Giren" ColumnName="Giren" />
+          <ScalarProperty Name="Cikan" ColumnName="Cikan" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Musteri">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Musteri">
+        <MappingFragment StoreEntitySet="TBL_Musteri">
+          <ScalarProperty Name="Koltuk" ColumnName="Koltuk" />
+          <ScalarProperty Name="Ucus" ColumnName="Ucus" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Ulke" ColumnName="Ulke" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Personel">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Personel">
+        <MappingFragment StoreEntitySet="TBL_Personel">
+          <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="IseGirisTarih" ColumnName="IseGirisTarih" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+          <ScalarProperty Name="Departman" ColumnName="Departman" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Ulke">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Ulke">
+        <MappingFragment StoreEntitySet="TBL_Ulke">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+          <ScalarProperty Name="UlkeAd" ColumnName="UlkeAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Telefon">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Telefon">
+        <MappingFragment StoreEntitySet="TBL_Telefon">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="TelefonID" ColumnName="TelefonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ilceler">
+      <EntityTypeMapping TypeName="ThyBiletModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iller">
+      <EntityTypeMapping TypeName="ThyBiletModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Class">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Class">
+        <MappingFragment StoreEntitySet="TBL_Class">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="KoltukClass" ColumnName="KoltukClass" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_UcusUrun">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_UcusUrun">
+        <MappingFragment StoreEntitySet="TBL_UcusUrun">
+          <ScalarProperty Name="Birim" ColumnName="Birim" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="Kdv" ColumnName="Kdv" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="UrunGrupAd" ColumnName="UrunGrupAd" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_UcusUrunGrup">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_UcusUrunGrup">
+        <MappingFragment StoreEntitySet="TBL_UcusUrunGrup">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="UrunGrupAd" ColumnName="UrunGrupAd" />
+          <ScalarProperty Name="UrunGrupId" ColumnName="UrunGrupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_UrunGirdiCikti">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_UrunGirdiCikti">
+        <MappingFragment StoreEntitySet="TBL_UrunGirdiCikti">
+          <ScalarProperty Name="GirdiCikti" ColumnName="GirdiCikti" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="UcusUrun" ColumnName="UcusUrun" />
+          <ScalarProperty Name="HareketID" ColumnName="HareketID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_PersonelLogları">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_PersonelLogları">
+        <MappingFragment StoreEntitySet="TBL_PersonelLogları">
+          <ScalarProperty Name="Rapor" ColumnName="Rapor" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MusteriLogları">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_MusteriLogları">
+        <MappingFragment StoreEntitySet="TBL_MusteriLogları">
+          <ScalarProperty Name="Rapor" ColumnName="Rapor" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Koltuk">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Koltuk">
+        <MappingFragment StoreEntitySet="TBL_Koltuk">
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="KoltukNO" ColumnName="KoltukNO" />
+          <ScalarProperty Name="KoltukID" ColumnName="KoltukID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Ucus">
+      <EntityTypeMapping TypeName="ThyBiletModel.TBL_Ucus">
+        <MappingFragment StoreEntitySet="TBL_Ucus">
+          <ScalarProperty Name="Saat" ColumnName="Saat" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Nereye" ColumnName="Nereye" />
+          <ScalarProperty Name="Nereden" ColumnName="Nereden" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Kapasite" ColumnName="Kapasite" />
+          <ScalarProperty Name="UcusNo" ColumnName="UcusNo" />
+          <ScalarProperty Name="UcusID" ColumnName="UcusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

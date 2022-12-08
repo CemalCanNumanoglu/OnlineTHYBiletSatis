@@ -1,0 +1,54 @@
+--------------------
+Öncelikle müşteri giriş butonuna tıklayarak açılan sekmede kayıt ol butonuna basıyoruz.
+
+Eğer kayıt olurken girdiğiniz TC,MAİL ve TELEFON numarası daha önce sisteme kayıt edilmişe oluşturduğunuz kayıt kabul edilmeyecektir.
+
+Müşteri dilerse şifresini değiştirebilir(Şifremi Güncelle kısmından). Fakat şifre değiştirirken istenen Mail Adresi ve Eski şifresini doğru girmelidir. Aksi taktirde şifresini değiştiremez.
+
+Müşteri alanları boş bırakarak sisteme giriş yapamaz. İlgili alanları doldurması gerekmektedir.
+
+Daha sonra müşteri sisteme giriş yaparak uçağa bineceği ineceği ve gideceği tarihi ilgili alanlara doldurup uçuşları listeleyebilir.(Tabloda en çok 08-27-2022 tarihinde uçuş var 4 adet).
+
+Müşteri aktif olan(Durum 1 ise) olan bütün uçuşları görebilecektir.
+
+Müşteri istediği uçuşun satırına basarak bilet fiyatlarını listeleyebilir. Ancak müşteri biletini kendi seçemez bir personelin müşteriye koltuk ataması gerekir sadece fiyat listelemek için oluşturulan paneli görebilir.
+
+Müşteri bilet siparişini oluşturduktan sonra veritabanına otomatik olarak istediği uçuş atanacaktır. Müşteri Logları kısmına ise müşteri uçuş seçimini yapmıştır lütfen koltuk atayınız şeklinde bir log tutulur.
+
+Daha sonra personel girişine gelerek personel id ve personel şifresi ile giriş yapabilirsiniz. İlk kullanım için "Giriş id = 0" ve "Şifre = 0000"
+
+Giriş yapıldıktan sonra müşteri loglarına girilir ve hangi müşteri bilet sipariş etmiş bakılır.
+
+Ardından müşteri listesi açılarak sipariş veren müşterinin satırına tıklanarak koltuk ataması yapılır. (Dev ekspress de problem olduğu için adres kısmı hariç diğer bölümleri doldurup güncelleme yapabiliyoruz.)
+
+Koltuk numarası atandıktan sonra uçuştaki yolcu kapasitesi 1 azaltılır ve bilet fiyatı bilet kasasına eklenir ve koltuk artık dolu koltuk olarak gözükür.(Tanımlamalar kısmında Kasa,Uçuş ve koltuk kısımlarından bunları takip edebilirsiniz)
+
+Sistem üzerinden personeller müşteri eklemesi yapabilir. Ama üstte belirttiğim gibi adres ile ilgili alan dışındaki diğer bölümler doldurulmalıdır. Aynısı personel kaydı içinde geçerlidir.
+
+Personel için oluşturulmuş kısımda tanımlamalar bölümüne giderek orda bulunan bütün alanlarla ilgili işlem yapabilirler. İstedikleri durumu, uçuşu, koltuk numarasını, kasa tanımlası vb gibi şeyler yapabilirler.
+
+Personeller ürünler bölümünden ürün listesine bakıp eksik olan ürünlerin siparişini yapabilirler.
+
+Ürün Hareketleri kısmına girip ürünü seçtikten sonra ürün hareketini girdi olarak belirleyip hangi tarihte alındığını ve kaç adet alındığını belirtip kaydet tuşuna basar.
+
+Daha sonra ürünün fiyatı kaç adet alındığına bağlı olarak hesaplanır ve ürün kasasından bakiye düşülür.
+
+Kaç adet satılmışsa veritabanındaki stoktan düşürülür.
+
+Eğer ürün adeti 0 a düşmüşse listeme yapılan panelde ürün stokta yok olarak gözükür.
+
+"Ürün Stokta Yok" yazan bir ürün alınmışsa eğer listeleme paneli kapatılıp tekrar açıldığında artık "Ürün Stokta Var" yazısı gözükecektir.
+
+Aynı işlem ürün satıldığı zamanda yapılabilir. Tek fark olarak ürün hareketi çıktı olarak seçilir ve satılan ürün adetine bağlı olarak fiyat hesaplanıp ürün kasasına eklenir.
+
+Personeller Ürün Girdi ve Ürün Çıktı kısmından hangi ürünün ne zaman ne kadar alındığını ve satıldığını görebilir. Aramayı kolaylaştırmak için listelenen panelin sağ üst kısmındaki arama kısmına basılır ve tarih aratması yapılır.
+
+Aynı olay müşteri ver personel loglarının listelendiği kısımlarda da geçerlidir.
+
+Programın basitçe yapabilecekleri bunlardır.
+
+---------------------------
+
+Cemal Can NUMANOĞLU
+170707010
+
